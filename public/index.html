@@ -1,0 +1,43 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Luta!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap"><link rel="stylesheet" href="/style.css"></head><body>
+<div id="escolha"><h1>ESCOLHA SEU LUTADOR</h1>
+<div class="pers" id="persEscolha"><button class="bt" data-v="palito">PALITO</button><button class="bt" data-v="blocos">BLOCOS</button></div>
+<p style="margin:0">Quem é você?</p>
+<div><button class="bt" data-p="0" style="background:#dc2626">🔴 Vermelho</button>
+<button class="bt" data-p="1" style="background:#2563eb">🔵 Azul</button></div>
+<p style="margin:0">Esta janela joga com:</p><div id="entrada"><button class="bt" data-e="teclado" style="background:#334155">⌨️ Teclado/toque</button> <button class="bt" data-e="controle" style="background:#334155">🎮 Controle</button></div>
+<button class="bt" id="local" style="background:#7c3aed">⌨️ vs 🎮 no mesmo PC</button>
+<p style="margin:0;font-size:13px;opacity:.8">Teclado = 🔴 Vermelho · Controle = 🔵 Azul</p>
+<div class="guia"><b>Golpes</b> (trás = longe do inimigo)<br>
+⬇ + 👊 alto = <b>Gancho</b> (joga longe)<br>
+trás + 🦶 baixo = <b>Rasteira</b> · trás + 🦵 alto = <b>Chute giratório</b><br>
+⬇ + 🦵/🦶 = chute agachado · ⬇ + ✊ baixo = soco agachado<br>
+<b style="color:#f87171">FATALITY</b> (no FINISH HIM): trás, frente, baixo + 👊 alto (perto)<br>
+No pulo: 👊 = soco aéreo · 🦵/🦶 = <b>Voadora</b><br>
+▶▶ (frente, frente) + 👊 alto = <b>Bola de fogo</b><br>
+☰ <b>Menu</b>: Esc no teclado ou Start no controle (habilidades, configurações, sair)<br>
+<b>Itens</b> (caem do céu, pega encostando): 🍗 +15 vida · ⭐ invencível 5s · 🔨 martelo 6s (todo golpe vira martelada)<br>
+Agachar desvia do soco alto e da bola de fogo. Golpe baixo só se defende agachado.<br>
+<b>🎮 Controle</b> (modo Xbox) · aperte qualquer botão do controle pra esta janela usar o controle<div class="gpmapa">
+<span><b style="background:#ca8a04">Y</b>👊 soco alto</span><span><b style="background:#2563eb">X</b>✊ soco baixo</span>
+<span><b style="background:#dc2626">B</b>🦵 chute alto</span><span><b style="background:#16a34a">A</b>🦶 chute baixo</span>
+<span><b style="background:#555">LB RB LT RT</b>🛡 defesa</span><span><b style="background:#555">✚</b>mover</span></div></div>
+<p style="opacity:.7;margin:0">Dica: deite o celular</p></div>
+<div id="app" class="hide"><canvas id="c3"></canvas><canvas id="c"></canvas><button id="ajuda">📜 Golpes</button><button id="menuBtn">☰ Menu</button><div id="lista" class="hide"></div><div id="gp" class="hide">🎮 Controle conectado</div>
+<div id="ctrl">
+<div class="pad">
+<span></span><button class="btn" data-k="pulo" data-gp="↑">⬆</button><span></span>
+<button class="btn" data-k="esq" data-gp="←">◀</button><button class="btn" data-k="baixo" data-gp="↓">⬇</button><button class="btn" data-k="dir" data-gp="→">▶</button>
+</div>
+<div class="pad">
+<button class="btn" data-k="socoAlto" data-gp="Y" style="--gp:#ca8a04">👊<small>ALTO</small></button><button class="btn" data-k="chuteAlto" data-gp="B" style="--gp:#dc2626">🦵<small>ALTO</small></button><button class="btn def" data-k="defesa" data-gp="LB RB">🛡</button>
+<button class="btn" data-k="socoBaixo" data-gp="X" style="--gp:#2563eb">✊<small>BAIXO</small></button><button class="btn" data-k="chuteBaixo" data-gp="A" style="--gp:#16a34a">🦶<small>BAIXO</small></button>
+</div></div></div>
+<div id="fim" class="hide"><button id="reset">🔁 Jogar de novo</button> <button id="trocar">👤 Escolher personagem</button></div>
+<div id="menu" class="hide"><div class="caixa" id="menuCaixa"></div></div>
+<script src="/som.js"></script><script src="/jogo.js"></script><script src="/selecao.js"></script>
+<script src="/sangue.js"></script>
+<script src="/fatality.js"></script><script src="/fatality-espada.js"></script><script src="/fatality-pedra.js"></script>
+<script type="module" src="/render3d.js"></script></body></html>
