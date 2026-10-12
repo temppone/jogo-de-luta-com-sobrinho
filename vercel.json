@@ -1,0 +1,4 @@
+{
+  "buildCommand": "cp server.js public/server.js",
+  "outputDirectory": "public"
+}
