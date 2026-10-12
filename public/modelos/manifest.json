@@ -1,0 +1,20 @@
+{
+  "palito": {
+    "padrao": { "modeloAtual": "procedural", "gltf": "" },
+    "fogo": { "modeloAtual": "procedural", "gltf": "" },
+    "pirata": { "modeloAtual": "procedural", "gltf": "" }
+  },
+  "blocos": {
+    "padrao": { "modeloAtual": "procedural", "gltf": "" },
+    "astronauta": { "modeloAtual": "procedural", "gltf": "" },
+    "gelo": { "modeloAtual": "procedural", "gltf": "" }
+  },
+  "eddie": {
+    "padrao": { "modeloAtual": "procedural", "gltf": "" },
+    "trovao": { "modeloAtual": "procedural", "gltf": "" }
+  },
+  "pretoVelho": {
+    "padrao": { "modeloAtual": "procedural", "gltf": "" },
+    "vento": { "modeloAtual": "procedural", "gltf": "" }
+  }
+}

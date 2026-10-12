@@ -61,7 +61,7 @@
       if (perd && explodiuEm === null) { explodiuEm = agora; explode(perd, P, s); }
       ctx.save();
       if (fat) { // tela escurece
-        const ini = fat.tipo === 'espada' ? 62 : fat.tipo === 'pedra' ? 72 : 0; ctx.fillStyle = 'rgba(0,0,0,' + Math.min(fat.idade < ini ? 0.3 : 0.75, Math.max(0, fat.idade - ini) / 16 + (ini ? 0.3 : 0)) + ')'; ctx.fillRect(0, 0, w, h);
+        const ini = fat.tipo === 'espada' ? 62 : fat.tipo === 'pedra' ? 72 : fat.tipo === 'capoeira' ? 66 : fat.tipo === 'ancestral' ? 76 : fat.tipo === 'brutal' ? 7 : 0; ctx.fillStyle = 'rgba(0,0,0,' + Math.min(fat.idade < ini ? 0.3 : 0.75, Math.max(0, fat.idade - ini) / 16 + (ini ? 0.3 : 0)) + ')'; ctx.fillRect(0, 0, w, h);
       }
       // pedaços e sangue
       for (const p of pedacos) {
@@ -75,12 +75,12 @@
       // flash branco na explosão
       if (explodiuEm !== null && agora - explodiuEm < 350) { ctx.fillStyle = 'rgba(255,255,255,' + (1 - (agora - explodiuEm) / 350) + ')'; ctx.fillRect(0, 0, w, h); }
       if (fat) {
-        const tx = fat.tipo === 'espada' ? 66 : fat.tipo === 'pedra' ? 78 : 14; if (fat.idade > tx) textoGrande('FATALITY', '#dc2626', h * 0.22, 96, w, s, 1 + 0.4 * Math.exp(-(fat.idade - tx) / 6));
+        const tx = fat.tipo === 'espada' ? 66 : fat.tipo === 'pedra' ? 78 : fat.tipo === 'capoeira' ? 70 : fat.tipo === 'ancestral' ? 80 : fat.tipo === 'brutal' ? 10 : 14; if (fat.idade > tx) textoGrande(fat.tipo === 'brutal' ? 'BRUTALITY' : 'FATALITY', '#dc2626', h * 0.22, 96, w, s, 1 + 0.4 * Math.exp(-(fat.idade - tx) / 6));
       } else if (st.finish) {
         const pisca = Math.floor(agora / 250) % 2;
         textoGrande('FINISH HIM!', pisca ? '#facc15' : '#ef4444', h * 0.3, 70, w, s);
         ctx.font = 'bold ' + 18 * s + 'px Orbitron, system-ui'; ctx.fillStyle = '#fff';
-        ctx.fillText('Perto do inimigo: TRÁS, FRENTE, BAIXO + 👊 SOCO ALTO  ·  ' + Math.ceil(st.finishResta) + 's', w / 2, h * 0.3 + 34 * s);
+        ctx.fillText('Perto do inimigo: TRÁS, FRENTE, BAIXO + SOCO ALTO  ·  ' + Math.ceil(st.finishResta) + 's', w / 2, h * 0.3 + 34 * s);
       }
       ctx.restore();
     },
